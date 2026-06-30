@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication Node</title>
+    <style>
+        body { background: #090d16; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .card { background: #131926; border: 1px solid rgba(255,255,255,0.06); padding: 40px; border-radius: 16px; width: 320px; }
+        input, button { width: 100%; padding: 12px; margin-bottom: 16px; border-radius: 8px; box-sizing: border-box; }
+        input { background: #090d16; border: 1px solid rgba(255,255,255,0.1); color: white; }
+        button { background: #6366f1; color: white; border: none; font-weight: bold; cursor: pointer; }
+        a { color: #0ea5e9; text-decoration: none; font-size: 14px; display: block; text-align: center; }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>JobLink Identity Server</h2>
+    <div th:if="${param.error}" style="color: #f43f5e; margin-bottom: 10px; font-size:14px;">Invalid Credentials or Suspended Node Status.</div>
+    <div th:if="${param.registered}" style="color: #10b981; margin-bottom: 10px; font-size:14px;">Registration complete! Awaiting admin approval.</div>
+    <form action="/login" method="POST">
+    
+    <div class="form-group">
+        <label for="usernameField">Email / Username:</label>
+        <input type="text" 
+               id="usernameField" 
+               name="username" 
+               autocomplete="username" 
+               required />
+    </div>
+
+    <div class="form-group">
+        <label for="passwordField">Password:</label>
+        <input type="password" 
+               id="passwordField" 
+               name="password" 
+               autocomplete="current-password" 
+               required />
+    </div>
+
+    <button type="submit">Login</button>
+</form>
+    <a href="/register">Create Ecosystem Node</a>
+</div>
+</body>
+</html>

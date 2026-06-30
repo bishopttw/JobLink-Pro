@@ -1,0 +1,8 @@
+Job Link Pro
+Features: Admin control, User reg(Subscription with paystack), login(with google auth), job using db(direct valid api(pub 5) and job(db manual post))
+1. build & compile the project
+2. check the db connection string(check for upgrade)
+3. get the jar file
+4. Run the jar file -If valid- push to GitHub
+5. Set up the Docker pipeline
+6. Deploy on render - via web service(docker) 

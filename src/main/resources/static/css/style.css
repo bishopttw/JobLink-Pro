@@ -1,0 +1,48 @@
+:root {
+    --linkedin-blue: #0a66c2;
+    --bg-gray: #f3f2ef;
+    --border-color: #e0e0e0;
+    --text-dark: #191919;
+    --text-muted: #666666;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+body { background-color: var(--bg-gray); color: var(--text-dark); display: flex; flex-direction: column; min-height: 100vh; }
+
+/* Navbar Styling */
+.navbar { background: white; border-bottom: 1px solid var(--border-color); padding: 10px 50px; display: flex; justify-content: space-between; align-items: center; position: fixed; top:0; width: 100%; z-index: 100; }
+.logo-area { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 20px; color: var(--linkedin-blue); }
+
+/* Layout Grid Container */
+.app-container { display: flex; max-width: 1200px; margin: 80px auto 20px auto; width: 100%; gap: 25px; padding: 0 20px; flex: 1; }
+
+/* Left Sidebar Navigation */
+.sidebar { width: 250px; background: white; border-radius: 10px; border: 1px solid var(--border-color); height: fit-content; overflow: hidden; }
+.profile-card { background: white; text-align: center; padding: 20px 15px; border-bottom: 1px solid var(--border-color); }
+.avatar { width: 70px; height: 70px; background: var(--linkedin-blue); border-radius: 50%; margin: 0 auto 10px auto; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 24px; }
+.menu-items { list-style: none; padding: 10px 0; }
+.menu-items li a { display: block; padding: 12px 20px; color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 14px; }
+.menu-items li a:hover { background: var(--bg-gray); color: var(--linkedin-blue); }
+
+/* Main Dynamic Feed Content Window */
+.feed-area { flex: 1; background: white; border-radius: 10px; border: 1px solid var(--border-color); padding: 25px; }
+
+/* Animated Skeleton Loading State UI */
+.skeleton-loader { display: flex; flex-direction: column; gap: 15px; }
+.skeleton-card { height: 100px; background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: loadingPulse 1.5s infinite; border-radius: 8px; }
+@keyframes loadingPulse { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+/* Real Job Cards CSS Output styling */
+.job-card { border-bottom: 1px solid var(--border-color); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; animation: fadeIn 0.6s ease-in-out forwards; opacity: 0; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.job-info h3 { color: var(--linkedin-blue); font-size: 18px; margin-bottom: 4px; }
+.job-info p { color: var(--text-muted); font-size: 14px; margin-bottom: 2px; }
+.apply-btn { background: transparent; border: 1px solid var(--linkedin-blue); color: var(--linkedin-blue); padding: 8px 16px; border-radius: 20px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+.apply-btn:hover { background: rgba(10, 102, 194, 0.1); }
+
+/* Authentication Design styling */
+.login-box { width: 400px; background: white; padding: 40px; margin: auto; margin-top: 10%; border-radius: 10px; border: 1px solid var(--border-color); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.login-box h2 { font-size: 28px; margin-bottom: 20px; color: #191919; }
+.input-group { margin-bottom: 20px; }
+.input-group input { width: 100%; padding: 14px; border: 1px solid var(--text-muted); border-radius: 4px; font-size: 16px; }
+.submit-btn { width: 100%; background: var(--linkedin-blue); color: white; padding: 14px; border: none; border-radius: 25px; font-size: 16px; font-weight: 600; cursor: pointer; }
